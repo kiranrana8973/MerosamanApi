@@ -1,0 +1,28 @@
+1. download mongodb
+2. create a folder named mongodb and create two sub folder
+    a. data
+    b. log
+3. create environment variable to use mongod and mongo . go to system variable and paste mongodb path
+-- C:\Program Files\MongoDB\Server\4.2\bin\
+
+4. create a file named mongod.cfg inside mongodb folder and copy paste this line
+
+    systemLog:
+    destination: file
+    path: C:\mongodb\log\mongodb.log
+    storage:
+    dbPath: C:\mongodb\data
+
+5. now save this and open command promt and run this command 
+-- mongod --config "C:\mongodb\mongod.cfg" --install
+
+note : if error occurs try clearing all the file inside data and log file and try again
+
+6. now start the mongodb server
+-- net start mongoDB
+
+note :
+    In windows you dont have to start server. in linux try to run this command
+
+7. stopping the mongodb server
+-- net stop mongoDB

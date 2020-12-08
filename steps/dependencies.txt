@@ -1,0 +1,18 @@
+1. npm init
+1. npm install express dotenv
+2. npm install -D nodemon
+3. npm i morgan     // middleware
+4. npm i mongoose
+5. npm install colors
+6. npm install slugify  // to use slug
+7. npm i node-geocoder 
+8. npm install express-fileupload
+9. npm i bcryptjs   // to encrypt the password
+10. npm i jsonwebtoken  // for the token
+11. npm install cookie-parser
+//if that does no work then use this : npm install cookie-parser -g
+12. npm i nodemailer    // for sending mail , but first go to https://mailtrap.io/ and signup for sending mail
+13. npm i express-mongo-sanitize    // for SQL Injection
+14. npm install helmet // Helmet helps you secure your Express apps by setting various HTTP headers. It’s not a silver bullet, but it can help!
+15. npm i xss-clean    //prevent xss attacks ,e.g when you insert data like : {name :"bootcamp <script>alert(1)<script>"}
+16. npm i cors // is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.[1]

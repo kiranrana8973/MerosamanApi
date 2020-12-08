@@ -1,0 +1,70 @@
+after installing dependencies 
+
+1. go to package.json
+overwrite the scripts files
+// try this is ubuntu or mac , in windows it is not working
+"scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  }
+
+  //For windows 
+  "scripts": {
+    "start": "SET NODE_ENV=development & nodemon server.js"
+  }
+
+2. create a server.js files
+
+3. create a folder name config where all the env files after
+and create config.env file and write
+    NODE_ENV=developemnt
+    PORT=5000
+
+4. For geoJSON location we are using mapquest
+
+https://developer.mapquest.com/user/me/apps 
+and get the keys from here
+
+5. To insert data into database from _data folder
+  node seeder.js -i
+and to delete
+  node seeder.js -d
+
+6. to send mail goto https://mailtrap.io/ and signup and click the demoinbox and check for the credentials
+
+7. SQL Injection
+-- In SQL 
+select * from users where username = '' or 1=1 and password='' or 1=1
+
+--in NOSQL
+{
+  "username":{$gt:""},
+  "password":{$gt:""}
+}
+
+//go to postman and try this
+{
+	 "email":{"$gt":""},
+  "password":"123456" // we have to give the correct password as we are using bcrypt so this wont work.so give correct password
+}
+
+
+//---------------------------------------------PUBLISHING API in postman
+1. go to postman and Publish docs
+2. go to postman and click export and save the json file to desktop
+
+3. download docgen from 
+	https://github.com/thedevsaddam/docgen
+
+4. go to the the docgen folder and copy json file in that folder and write a command
+	./docgen.exe build -i DevCampers\ API.postman_collection.json -o index.html
+
+5. save that index.html file in public folder and go to browser and type 
+  localhost:5000 
+
+that index page should load
+
+6. download the bootstrap font for index.html
+https://github.com/Mobirise/Free-Bootstrap-Template/tree/master/assets/bootstrap/fonts
+.woff ,.woff2, .eot
+and create a folder fonts inside public folder and paste there
